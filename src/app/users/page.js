@@ -1,3 +1,4 @@
+import DeleteUsers from "@/components/DeleteUsers";
 import Link from "next/link";
 import React from "react";
 
@@ -24,6 +25,7 @@ const Users = async () => {
               Edit
             </Link>
           </span>
+          <DeleteUsers id={user.id} />
         </div>
       ))}
     </div>
