@@ -12,12 +12,18 @@ const Users = async () => {
   console.log(users);
   return (
     <div className="text-center mt-5">
-      user list
+      <h3>user list</h3>
       {users.map((user) => (
         <div key={user.id}>
           <Link href={`http://localhost:3000/users/${user.id}`}>
             {user.name}
           </Link>
+          <span className="text-blue-600 ml-5 inline-block w-[100px]">
+            {" "}
+            <Link href={`http://localhost:3000/users/${user.id}/update`}>
+              Edit
+            </Link>
+          </span>
         </div>
       ))}
     </div>
