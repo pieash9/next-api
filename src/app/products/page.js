@@ -26,20 +26,24 @@ const Products = async () => {
               <td>Color</td>
               <td>Company</td>
               <td>Category</td>
+              <td>Action</td>
             </tr>
           </thead>
 
           <tbody>
-            {
-                products && products.map(product=><tr key={product._id}>
-                    <td>{product.name}</td>
-                    <td>{product.price}</td>
-                    <td>{product.color}</td>
-                    <td>{product.company}</td>
-                    <td>{product.category}</td>
-                    
-                </tr>)
-            }
+            {products &&
+              products.map((product) => (
+                <tr key={product._id}>
+                  <td>{product.name}</td>
+                  <td>{product.price}</td>
+                  <td>{product.color}</td>
+                  <td>{product.company}</td>
+                  <td>{product.category}</td>
+                  <td className="text-blue-500">
+                    <Link href={`/products/${product._id}`}>Edit</Link>
+                  </td>
+                </tr>
+              ))}
           </tbody>
         </table>
       </div>
