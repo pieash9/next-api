@@ -5,13 +5,15 @@ import { NextResponse } from "next/server";
 
 export async function GET() {
   let data = [];
+  let success = true;
   try {
     await mongoose.connect(connectionStr);
     data = await Product.find();
   } catch (error) {
     data = { result: "error happend" };
+    success: false;
   }
-  return NextResponse.json(data);
+  return NextResponse.json({ result: data }, { success });
 }
 
 export async function POST(req) {

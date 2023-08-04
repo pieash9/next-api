@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React from "react";
 
 const AddProduct = () => {
@@ -26,6 +27,9 @@ const AddProduct = () => {
   return (
     <div>
       <h3>Add Products</h3>
+      <Link href="/">
+        <h4 className="text-blue-500">⬅️Home</h4>
+      </Link>
 
       <div className=" mt-5">
         <form
